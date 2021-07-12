@@ -5,7 +5,7 @@
 #define LIST_INIT_SIZE 100
 #define LISTINCREMENT 10
 
-typedef ElemType int;
+typedef int ElemType;
 
 typedef struct {
     ElemType *elem; //存储空间基址
