@@ -66,7 +66,7 @@ Status ListDelete_Sq(SqList &L, int i, ElemType &e)
         return ERROR;
     }
     ElemType *p = &(L.elem[i - 1]); //p为被删除元素的位置
-    e = *p;							//被删除元素的值赋值给e
+    e = *p;                         //被删除元素的值赋值给e
     ElemType *q = &(L.elem + L.length - 1); //表尾元素的位置
     for (++p; p <= q; ++p)             //被删除元素之后的元素左移
     {
@@ -75,3 +75,55 @@ Status ListDelete_Sq(SqList &L, int i, ElemType &e)
     --L.length;                       //表长减1
     return OK;
 } // ListDelete_Sq
+
+int LocateElem(SqList L, ElemType e, Status (* compare)(ElemType , ElemType))
+{
+    //在顺序线性表L中找到第1个值与e满足compare()的元素的位序
+    //若找到，则返回其在L中的位序，否则返回0
+    i = 1;
+    p = L.elem;
+    while (i <= L.length && !(*compare)(*p++, e)) ++i;
+    if (i <= L.length)
+    {
+        return i;
+    }
+    else
+    {
+        return 0;
+    }
+} // LocateElem_Sq
+
+void MergeList_Sq(SqList La, SqList Lb, SqList &Lc)
+{
+    //已知顺序线性表La和Lb的元素按值非递减排列
+    //归并La和Lb得到新的顺序线性表Lc，Lc的元素也按值非递减排列
+    pa = La.elem;
+    pb = Lb.elem;
+    Lc.listsize = Lc.length = La.length + Lb.length;
+    pc = Lc.elem = (ElemType *)malloc(Lc.listsize * sizeof(ElemType));
+    if (!Lc.ElemType)
+    {
+        exit(OVERFLOW);
+    }
+    pa_last = La.elem + La.length - 1;
+    pb_last = Lb.elem + Lb.length - 1;
+    while (pa <= pa_last && pb <= pb_last) //归并
+    {
+        if (pa <= pa_last)
+        {
+            *pc++ = *pa++;
+        }
+        else
+        {
+            *pc++ = *pb++;
+        }
+    }
+    while (pa <= pa_last) //插入La的剩余元素
+    {
+        *pc++ = *pa++;
+    }
+    while (pb <= pb_last) //插入Lb的剩余元素
+    {
+        *pc++ = *pb++;
+    }
+}//MergeList_Sq
