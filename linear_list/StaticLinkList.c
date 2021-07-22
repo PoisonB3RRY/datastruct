@@ -36,6 +36,7 @@ void InitSpace_SL(SLinkList &space)
 int Malloc_SL(SLinkList &space)
 {
     //若备用空间链表非空，则返回分配的结点下标，否则返回0
+    //头结点的游标存放的永远是下一个未存放数据的下标，从头结点cur中找下个可用结点下标
     i = space[0].cur;
     if (space[0].cur)
     {
