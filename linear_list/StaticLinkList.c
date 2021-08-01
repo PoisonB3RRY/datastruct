@@ -48,6 +48,7 @@ int Malloc_SL(SLinkList &space)
 void Free_SL(SLinkList &space, int k)
 {
     //将下标为k的空闲结点回收到备用链表
+    //不清楚space[k]中的数据
     space[k].cur = space[0].cur;
     space[0].cur = k;
 }
