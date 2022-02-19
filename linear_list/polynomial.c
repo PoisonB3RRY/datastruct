@@ -31,3 +31,8 @@ void CreatePolyn(polynomial &P, int m) //输入m项的系数和指数，建立�
     InitList(P);
     h = GetHead(P);
 }
+
+void AddPolyn(polynomial &Pa, polynomial &Pb)
+{
+    //多项式加法：Pa=Pa+Pb，利用两个多项式的节点构成“和多项式”
+}
