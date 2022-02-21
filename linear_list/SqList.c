@@ -127,3 +127,13 @@ void MergeList_Sq(SqList La, SqList Lb, SqList &Lc)
         *pc++ = *pb++;
     }
 }//MergeList_Sq
+
+Status compare(int a, int b)
+{
+    if (a == b)
+    {
+        return 1;
+    }
+
+    return 0;
+}
