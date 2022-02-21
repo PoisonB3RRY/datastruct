@@ -105,7 +105,8 @@ void MergeList_L(LinkList &La, LinkList &Lb, LinkList &Lc)
             pc = pb;
             pb = pb->next;
         }
-        pc->next = pa ? pa : pb; //插入剩余段
-        free(Lb); //释放Lb的头结点
     }
+    pc->next = pa ? pa : pb; //查看最后一次指针在La还是Lb上，在哪个上面哪个就有剩下的。
+    free(Lb); //La的头结点变成Lc的头结点了，释放Lb的头结点。
 } //MergeList_L
+
