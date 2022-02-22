@@ -17,7 +17,7 @@ int LocateElem_SL(SLinkList S, ElemType e)
     i = S[0].cur;     //i指示表中第1个节点
     while (i && S[i].data != e)
     {
-        i = S[i].cur;    //在表中顺链查找
+        i = S[i].cur;    //在表中顺链查找,cur总比i大1
     }
     return i;
 }//LocateElem_SL
