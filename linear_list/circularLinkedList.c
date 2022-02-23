@@ -65,3 +65,7 @@ Status ListDelete_DuL(DuLinkList &L, int i, ElemType &e)
   free(p);
   return OK;
 }
+
+void method(){
+  return null;
+}
