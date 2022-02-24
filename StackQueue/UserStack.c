@@ -50,3 +50,20 @@ void LineEdit(SqStack &s)
     }
     DestroyStack(s);
 }//LineEdit
+
+//汉诺塔 hanoi
+void hanoi(int n, char x, char y, char z)
+{
+    //最初圆盘都在塔x上，由上到下编号为1~n，目标塔为z，y塔为辅助塔
+    //搬动操作move(x,n,z)可以定义为(c是初始值为0的变量，可对全局搬动次数计数)
+    if (n == 1)
+    {
+        move(x, 1, z); //将编号为1的圆盘从x柱移动到z柱
+    }
+    else
+    {
+        hanoi(n - 1, x, z, y); //讲编号为1至n-1的圆盘移到y，z做辅助
+        move(x, n, z); //将编号为n的圆盘移动到z
+        hanoi(n - 1, y, x, z); //将编号为1至n-1的圆盘移动到z，x做辅助
+    }
+}
