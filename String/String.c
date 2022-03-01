@@ -37,3 +37,23 @@ Status Concat(SString &T, SString S1, SString S2) {
   }
   return uncut;
 }
+
+Status SubString(SString &Sub, SString S, int pos, int len) {
+  //用Sub返回串S的第pos个字符长起长度为len的子串
+  //其中， 1<= pos <= StrLength(S)且第pos个字符起长度为len的子串
+
+  if (pos < 1 || pos > S[0] || len < 0) {
+    return ERROR;
+  }
+  int realLen = 0;
+  if (len > S[0] - pos + 1) {
+    realLen = S[0] - pos + 1;
+  } else {
+    realLen = len;
+  }
+  for (int i = 1; i <= realLen; i++) {
+    Sub[i] = S[i + pos - 1];
+  }
+  Sub[0] = realLen;
+  return OK;
+}
