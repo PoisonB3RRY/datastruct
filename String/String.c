@@ -57,3 +57,28 @@ Status SubString(SString &Sub, SString S, int pos, int len) {
   Sub[0] = realLen;
   return OK;
 }
+
+int Index(SString S, SString T, int pos) {
+  //返回子串T在主串S中第pos个字符之后的位置。若不存在，则函数值为0.
+  //其中，T非空，1<=pos<=StrLength(S)。
+  int i; //在S中查找时使用的游标
+  S = S + pos;
+  while (i <= S[0] - T[0]) {
+    int j;
+    for (j = 1; j <= T[0]; ++j) {
+      if (*(S + j) == *(T + j)) {
+        continue;
+      } else {
+        S++;
+        T++;
+        break;
+      }
+    }
+    if (j == T[0] + 1) {
+      return i;
+    }
+    ++i;
+  }
+
+  return 0;
+}
