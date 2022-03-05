@@ -11,3 +11,15 @@ typedef struct {
   char *item[];
   int last;
 } WordListType;
+typedef int ElemType;
+typedef struct {
+  HString key;
+  LinkList bnolist;
+} IdxTermType;
+typedef struct {
+  IdxTermType item[MAX_KEY_NUM + 1];
+  int last;
+} IdxListType;
+
+char *buf;
+WordListType wdList;
