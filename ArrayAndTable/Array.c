@@ -94,3 +94,7 @@ Status Locate(Array A, va_list ap, int &off){
     }
     return OK;
 }
+
+Status Value(Array A, ElemType &e, ...){
+
+}
