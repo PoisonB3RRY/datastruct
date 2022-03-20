@@ -70,12 +70,12 @@ Status DestoryArray(Array &A){
     }
     free(A.base);
     A.base=NULL;
-    if!(A.bound){
-        retuen ERROR;
+    if(!A.bound){
+        return ERROR;
     }
     free(A.bound);
     A.bound=NULL;
-    if!(A.constants){
+    if(!A.constants){
         return ERROR;
     }
     A.constants=NULL;

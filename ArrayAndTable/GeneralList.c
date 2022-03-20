@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef int AtomType;
+
 typedef enum {
     ATOM, LIST
 } ElemTag; //ATOM==0：原子，LIST==1：子表

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "status.h"
+typedef int AtomType;
 
 typedef enum {
     ATOM,LIST 
