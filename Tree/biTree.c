@@ -17,3 +17,5 @@ Status PreOrderTreverse(BiTree T, Status (*visit)(TElemType e));
 Status InOrderTreverse(BiTree T, Status (*visit)(TElemType e));
 
 Status PostOrderTreverse(BiTree T, Status (*visit)(TElemType e));
+
+Status LevelOrderTreverse(BiTree T, Status (*visit)(TElemType e));
