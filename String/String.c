@@ -13,8 +13,7 @@ Status Concat(SString &T, SString S1, SString S2) {
     for (int i = 1; i <= S1[0]; i++) {
       T[i] = S1[i];
     }
-    for(int j= S1[0]+1; j<=S2[0];j++])
-    {
+    for (int j = S1[0] + 1; j <= S2[0]; j++) {
       T[j] = S2[j];
     }
     T[0] = S1[0] + S2[0];
